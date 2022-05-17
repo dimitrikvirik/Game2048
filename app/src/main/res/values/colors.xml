@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="grid_color_power1">#eee4da</color>
+    <color name="grid_color_power2">#ede0c8</color>
+    <color name="grid_color_power3">#f2b179</color>
+    <color name="grid_color_power4">#f59563</color>
+    <color name="grid_color_power5">#f67c5f</color>
+    <color name="grid_color_power6">#f65e3b</color>
+    <color name="grid_color_power7">#edcf72</color>
+    <color name="grid_color_power8">#edcc61</color>
+    <color name="grid_color_power9">#edc850</color>
+    <color name="grid_color_power10">#edc53f</color>
+    <color name="grid_color_power11">#edc22e</color>
+</resources>

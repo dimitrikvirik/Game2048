@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363">
+
+        <TextView
+            android:gravity="center"
+            android:text="2"
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:id="@+id/grid00"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp"/>
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid10"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid20"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid30"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid01"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid11"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid21"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid31"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid02"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid12"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid22"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid32"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="75dp"
+            android:textSize="32sp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid03"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid13"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid23"
+            android:textSize="32sp"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+        <TextView android:gravity="center"
+            android:id="@+id/grid33"
+            android:text=""
+            android:background="@drawable/background_grid_power1"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="5dp" />
+
+    </GridLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
