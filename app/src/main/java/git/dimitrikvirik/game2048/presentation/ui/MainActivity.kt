@@ -1,8 +1,6 @@
-package git.dimitrikvirik.game2048
+package git.dimitrikvirik.game2048.presentation.ui
 
 import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import git.dimitrikvirik.game2048.databinding.ActivityMainBinding

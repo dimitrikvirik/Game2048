@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chooseNickNameFragment">
+
+    <fragment
+        android:id="@+id/chooseNickNameFragment"
+        android:name="git.dimitrikvirik.game2048.presentation.ui.fragment.ChooseNickNameFragment"
+        android:label="fragment_choose_nick_name"
+        tools:layout="@layout/fragment_choose_nick_name" >
+        <action
+            android:id="@+id/action_chooseNickNameFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="git.dimitrikvirik.game2048.presentation.ui.fragment.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_scoreBoardFragment"
+            app:destination="@id/scoreBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="git.dimitrikvirik.game2048.presentation.ui.fragment.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" />
+    <fragment
+        android:id="@+id/scoreBoardFragment"
+        android:name="git.dimitrikvirik.game2048.presentation.ui.fragment.ScoreBoardFragment"
+        android:label="fragment_score_board"
+        tools:layout="@layout/fragment_score_board" />
+</navigation>
