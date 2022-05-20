@@ -15,8 +15,11 @@ class ChooseNickNameFragmentVM(
     }
 
     fun getRandomNickName() {
+        val re = Regex("[^A-Za-z]")
         viewModelScope.launch {
-            val username = userRepository.getRandomUser().body()!!.results[0].login.username
+            var username = userRepository.getRandomUser()
+                .body()!!.results[0].login.username
+            username = re.replace(username, "")
             nickNameLiveData.value = username
             Log.d("USERNAME", username)
         }

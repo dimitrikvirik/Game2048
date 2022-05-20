@@ -38,11 +38,7 @@ class ChooseNickNameFragment : Fragment() {
         }
         binding.generateBttn.setOnClickListener {
             vm.nickNameLiveData.observe(viewLifecycleOwner) {
-                try {
-                    binding.nicknameET.setText(it)
-                } catch (ex: NumberFormatException) {
-
-                }
+                binding.nicknameET.setText(it)
             }
             vm.getRandomNickName()
         }
