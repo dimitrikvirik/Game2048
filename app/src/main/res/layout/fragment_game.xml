@@ -65,6 +65,7 @@
         <TextView android:gravity="center"
             android:id="@+id/grid01"
             android:text=""
+            android:visibility="visible"
             android:background="@drawable/background_grid_power1"
             android:textStyle="bold"
             android:textColor="@color/black"
