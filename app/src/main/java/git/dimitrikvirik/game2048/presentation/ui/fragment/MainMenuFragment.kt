@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import git.dimitrikvirik.game2048.R
 import git.dimitrikvirik.game2048.databinding.FragmentMainMenuBinding
 import git.dimitrikvirik.game2048.presentation.vm.GameFragmentVM
 import git.dimitrikvirik.game2048.presentation.vm.MainMenuFragmentVM
@@ -28,6 +30,16 @@ class MainMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         nickname = context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.getString("name", "None")?: "None"
-        binding.nickNameTV.text = nickname
+        with(binding){
+            nickNameTV.text = "Welcome, " + nickname
+            scoreboardBttn.setOnClickListener {
+                findNavController().navigate(R.id.scoreBoardFragment)
+            }
+            playBttn.setOnClickListener {
+                findNavController().navigate(R.id.gameFragment)
+            }
+
+        }
+
     }
 }
