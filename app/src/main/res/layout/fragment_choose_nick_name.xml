@@ -3,52 +3,87 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background_gradient"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragment.ChooseNickNameFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="250dp"
+        app:cardBackgroundColor="@color/primary_color_2"
+        android:layout_height="250dp"
+        android:layout_marginTop="48dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/_2048"
+            android:textColor="@color/white"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:rotation="5"/>
+    </androidx.cardview.widget.CardView>
 
     <EditText
         android:id="@+id/nicknameET"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginTop="250dp"
-        android:hint="Nick Name"
+        android:layout_marginTop="40dp"
+        android:hint="@string/your_nickname"
+        android:textColor="@color/primary_color_3"
+        android:textColorHighlight="@color/primary_color_3"
+        android:textColorHint="@color/primary_color_3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.cardview.widget.CardView
         android:id="@+id/acceptBttn"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:gravity="center"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
+        app:cardBackgroundColor="@color/primary_color_3"
+        app:cardCornerRadius="45dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nicknameET">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Accept"/>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:rotation="270"
+            android:src="@drawable/arrow"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.cardview.widget.CardView
         android:id="@+id/generateBttn"
-        android:layout_width="200dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
-        android:gravity="center"
+        app:cardBackgroundColor="@color/primary_color_3"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nicknameET"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/acceptBttn">
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toEndOf="@+id/nicknameET"
+        app:layout_constraintTop_toTopOf="@+id/nicknameET"
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Generate For Me "/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dice"
+            app:tint="@color/white" />
+    </androidx.cardview.widget.CardView>
 
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.*
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import git.dimitrikvirik.game2048.R
 import git.dimitrikvirik.game2048.data.enum.Swipe
 import git.dimitrikvirik.game2048.databinding.FragmentGameBinding
@@ -70,12 +71,21 @@ class GameFragment : Fragment() {
             })
         }
 
+        binding.backBttn.setOnClickListener {
+            findNavController().navigate(R.id.mainMenuFragment)
+        }
+        binding.bestScoreTV.text = bestScore.toString()
+
         drawBoard()
     }
 
     private fun updateBestScore(score: Int) {
-        context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.edit()
-            ?.putInt("bestScore", score)?.apply()
+        if(score > bestScore) {
+            bestScore = score
+            context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.edit()
+                ?.putInt("bestScore", bestScore)?.apply()
+            binding.bestScoreTV.text = bestScore.toString()
+        }
     }
 
     private fun handleSwipe(swipe: Swipe) {
@@ -125,7 +135,7 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        Log.d("123", score.toString())
+        binding.currentScoreTV.text = score.toString()
         updateBestScore(score)
         if (!anyEmpty) {
             //TODO lose game

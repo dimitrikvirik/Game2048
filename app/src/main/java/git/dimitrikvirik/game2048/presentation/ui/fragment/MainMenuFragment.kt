@@ -12,6 +12,7 @@ import git.dimitrikvirik.game2048.databinding.FragmentMainMenuBinding
 import git.dimitrikvirik.game2048.presentation.vm.GameFragmentVM
 import git.dimitrikvirik.game2048.presentation.vm.MainMenuFragmentVM
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.system.exitProcess
 
 class MainMenuFragment : Fragment() {
     lateinit var nickname: String
@@ -32,11 +33,20 @@ class MainMenuFragment : Fragment() {
         nickname = context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.getString("name", "None")?: "None"
         with(binding){
             nickNameTV.text = "Welcome, " + nickname
-            scoreboardBttn.setOnClickListener {
+            scoreBoardBttn.setOnClickListener {
                 findNavController().navigate(R.id.scoreBoardFragment)
             }
             playBttn.setOnClickListener {
                 findNavController().navigate(R.id.gameFragment)
+            }
+
+            userBttn.setOnClickListener{
+                context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.edit()?.remove("name")?.apply()
+                findNavController().navigate(R.id.chooseNickNameFragment)
+            }
+
+            exitBttn.setOnClickListener {
+                exitProcess(0);
             }
 
         }
