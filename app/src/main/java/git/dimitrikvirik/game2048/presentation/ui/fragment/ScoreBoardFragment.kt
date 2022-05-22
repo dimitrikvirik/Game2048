@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import git.dimitrikvirik.game2048.R
 import git.dimitrikvirik.game2048.databinding.FragmentMainMenuBinding
@@ -44,7 +45,9 @@ class ScoreBoardFragment : Fragment() {
         binding.scoreBoardRV.adapter = scoreBoardRVAdapter
         getUserInfo()
         scoreBoardRVAdapter.updateList(getScoreBoardList())
-
+        binding.backBttn.setOnClickListener {
+            findNavController().navigate(R.id.mainMenuFragment)
+        }
         binding.resetBttn.setOnClickListener {
             context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.edit()?.putInt("bestScore", 0)?.apply()
             getUserInfo()
@@ -53,7 +56,7 @@ class ScoreBoardFragment : Fragment() {
     }
 
     fun getScoreBoardList(): List<Pair<String, Int>>{
-        return listOf("Krivik" to 24300, "Nandemonaya" to 29500, nickname to bestScore).sortedWith(compareBy { it.second }).reversed()
+        return listOf("Krivik" to 106, "Nandemonaya" to 256, nickname to bestScore).sortedWith(compareBy { it.second }).reversed()
     }
 
     fun getUserInfo(){
