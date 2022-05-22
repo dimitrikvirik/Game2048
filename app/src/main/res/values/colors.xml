@@ -8,15 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="grid_color_power1">#eee4da</color>
-    <color name="grid_color_power2">#ede0c8</color>
-    <color name="grid_color_power3">#f2b179</color>
-    <color name="grid_color_power4">#f59563</color>
-    <color name="grid_color_power5">#f67c5f</color>
-    <color name="grid_color_power6">#f65e3b</color>
-    <color name="grid_color_power7">#edcf72</color>
-    <color name="grid_color_power8">#edcc61</color>
-    <color name="grid_color_power9">#edc850</color>
-    <color name="grid_color_power10">#edc53f</color>
-    <color name="grid_color_power11">#edc22e</color>
+    <color name="grid_color_power1">#BFC2ED</color>
+    <color name="grid_color_power2">#B0B5EA</color>
+    <color name="grid_color_power3">#A0A7E7</color>
+    <color name="grid_color_power4">#919AE4</color>
+    <color name="grid_color_power5">#818DE1</color>
+    <color name="grid_color_power6">#7280DE</color>
+    <color name="grid_color_power7">#6272DA</color>
+    <color name="grid_color_power8">#5365D7</color>
+    <color name="grid_color_power9">#4358D4</color>
+    <color name="grid_color_power10">#344AD1</color>
+    <color name="grid_color_power11">#243DCE</color>
 </resources>
