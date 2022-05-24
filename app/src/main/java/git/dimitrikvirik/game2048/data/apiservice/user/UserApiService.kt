@@ -1,6 +1,6 @@
 package git.dimitrikvirik.game2048.data.apiservice.user
 
-import git.dimitrikvirik.game2048.domain.user.response.UserResponse
+import git.dimitrikvirik.game2048.domain.model.user.response.UserResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

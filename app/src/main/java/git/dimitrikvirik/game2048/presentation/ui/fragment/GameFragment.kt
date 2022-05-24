@@ -1,10 +1,15 @@
 package git.dimitrikvirik.game2048.presentation.ui.fragment
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import git.dimitrikvirik.game2048.R
@@ -14,11 +19,14 @@ import git.dimitrikvirik.game2048.game.board.Direction
 import git.dimitrikvirik.game2048.game.game2048.Game
 import git.dimitrikvirik.game2048.game.game2048.newGame2048
 import git.dimitrikvirik.game2048.presentation.vm.GameFragmentVM
+import kotlinx.coroutines.NonCancellable.cancel
+import kotlinx.coroutines.NonCancellable.start
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlin.math.log2
 
 
 class GameFragment : Fragment() {
+    var recordScoreRenewed: Boolean = false
     lateinit var nickname: String
     var bestScore: Int = 0
     var score = 0
@@ -80,7 +88,15 @@ class GameFragment : Fragment() {
     }
 
     private fun updateBestScore(score: Int) {
-        if(score > bestScore) {
+        if (score > bestScore) {
+            if (!recordScoreRenewed) {
+                recordScoreRenewed = true
+                Toast.makeText(
+                    context,
+                    "Congrats, you have your new record score!",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
             bestScore = score
             context?.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE)?.edit()
                 ?.putInt("bestScore", bestScore)?.apply()
@@ -101,6 +117,7 @@ class GameFragment : Fragment() {
         }
     }
 
+
     private fun drawBoard() {
         score = 0
         var anyEmpty = false
@@ -110,6 +127,9 @@ class GameFragment : Fragment() {
                 if (game[i, j] != null) {
                     textView.visibility = View.VISIBLE
                     val num = game[i, j]!!
+                    revealCellWithAnimation(textView)
+
+
                     textView.text = num.toString()
                     textView.setBackgroundResource(
                         when (log2(num.toDouble())) {
@@ -128,6 +148,20 @@ class GameFragment : Fragment() {
                     score += num
                     if (num == 2048) {
                         //TODO win game
+                        recordScoreRenewed = false
+                        val builder = AlertDialog.Builder(context)
+                        builder.setMessage("Congrats, you won! \n Wanna play again?")
+                            .setPositiveButton("Again"
+                            ) { dialog, id ->
+                                game = newGame2048()
+                                game.initialize()
+                                drawBoard()
+                            }
+                            .setNegativeButton("Main Menu"
+                            ) { dialog, id ->
+                                findNavController().navigate(R.id.mainMenuFragment)
+                            }
+                        builder.create().show()
                     }
                 } else {
                     textView.visibility = View.INVISIBLE
@@ -138,8 +172,35 @@ class GameFragment : Fragment() {
         binding.currentScoreTV.text = score.toString()
         updateBestScore(score)
         if (!anyEmpty) {
-            //TODO lose game
+            recordScoreRenewed = false
+            val builder = AlertDialog.Builder(context)
+            builder.setMessage("Unfortunately you lost :( \n Wanna play again?")
+                .setPositiveButton("Again"
+                ) { dialog, id ->
+                    game = newGame2048()
+                    game.initialize()
+                    drawBoard()
+                }
+                .setNegativeButton("Main Menu"
+                ) { dialog, id ->
+                    findNavController().navigate(R.id.mainMenuFragment)
+                }
+            builder.create().show()
         }
+
+    }
+
+
+    private fun revealCellWithAnimation(textView: TextView) {
+        val cx = textView.width / 2
+        val cy = textView.height / 2
+
+        val finalRadius = Math.hypot(cx.toDouble(), cy.toDouble()).toFloat()
+
+        val anim = ViewAnimationUtils.createCircularReveal(textView, cx, cy, 0f, finalRadius)
+
+        textView.visibility = View.VISIBLE
+        anim.start()
 
     }
 

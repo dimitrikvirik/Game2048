@@ -3,7 +3,6 @@ package git.dimitrikvirik.game2048.domain.koin
 import git.dimitrikvirik.game2048.data.apiservice.user.UserApiService
 import git.dimitrikvirik.game2048.data.repository.user.UserRepositoryImpl
 import git.dimitrikvirik.game2048.domain.repository.user.UserRepository
-import git.dimitrikvirik.game2048.domain.user.response.UserResponse
 import git.dimitrikvirik.game2048.presentation.vm.ChooseNickNameFragmentVM
 import git.dimitrikvirik.game2048.presentation.vm.GameFragmentVM
 import git.dimitrikvirik.game2048.presentation.vm.MainMenuFragmentVM
