@@ -2,7 +2,7 @@ package git.dimitrikvirik.game2048.data.repository.user
 
 import git.dimitrikvirik.game2048.data.apiservice.user.UserApiService
 import git.dimitrikvirik.game2048.domain.repository.user.UserRepository
-import git.dimitrikvirik.game2048.domain.user.response.UserResponse
+import git.dimitrikvirik.game2048.domain.model.user.response.UserResponse
 import retrofit2.Response
 
 class UserRepositoryImpl(

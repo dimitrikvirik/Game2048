@@ -24,7 +24,4 @@ class ChooseNickNameFragmentVM(
             Log.d("USERNAME", username)
         }
     }
-    fun updateNickName(nick: String ){
-
-    }
 }
